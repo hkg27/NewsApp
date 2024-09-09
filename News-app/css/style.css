@@ -1,0 +1,310 @@
+@import 'utilities.css';
+
+:root{
+    --primary:#3DCFD3;
+    --dark:#161616;
+    --pure:#FFFFFF;
+    --ternary:#898989;
+    --light:#F2F2F2;
+    --secondary:#070606;
+}
+html,body{
+    overflow-x: hidden;
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: 'Poppins',sans-serif;
+    background: var(--light);
+}
+.container{
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+@media (min-width: 576px) {
+    .container {
+      max-width: 570px;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .container {
+      max-width: 780px;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .container {
+      max-width: 960px;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .container {
+      max-width: 1152px;
+    }
+  }
+nav{
+    background-color:var(--light);
+    box-shadow: 0 0 4px #bbd0e2;
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    left: 0;
+    right: 0;
+}
+.nav-1 img{
+    width: 50px;
+    height: 50px;
+}
+.nav-1,.nav-2{
+    padding: 1rem 0;
+    justify-content: space-between;
+    background:var(--light);
+    
+}
+.nav-1 a,.nav-2 a{
+    text-decoration: none;
+    color: var(--dark);
+}
+.new-input{
+    width: 500px;
+    height: 25px;
+    padding-inline: 12px;
+    border-radius: 4px;
+    border: 2px solid rgb(16, 39, 211);
+    outline: none;
+}
+.search-bar{
+    gap: 8px;
+}
+.search-bar .search-button{
+    background-color: var(--primary);
+    color: var(--pure);
+    padding: 8px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+.search-bar .search-button:hover{
+    background-color: #0c484a;
+}
+li{
+    list-style: none;
+}
+ul{
+    gap: 2rem;
+}
+.hover-links{
+    cursor: pointer;
+    transition: all .3s ease;
+
+}
+.hover-links:hover{
+    color: var(--primary);
+}
+.hover-links.active{
+    color: var(--primary) !important;
+}
+main{
+    position: relative;
+    padding-block: 20px;
+    margin-top: 10rem;
+}
+.cards-container{
+    justify-items: center;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    row-gap: 20px;
+    gap: 2rem;
+    align-items: start;
+}
+.card{
+    position: relative;
+    width: 100%;
+    max-width: 360px;
+    height: 400px;
+    box-shadow: 0 0 4px #d4ecff;
+    border-radius: 4px;
+    background-color: var(--pure);
+    overflow: hidden;
+    transition: all .3s ease;
+}
+.card:hover{
+    box-shadow: 6px 3px 8px #d4ecffc6;
+    background-color: #f9fdff;
+    transform: translateY(-2px);
+}
+.card-header {
+    width: 100%;  /* Set the container's width */
+    height: 180px; /* Set the container's height */
+    overflow: hidden; /* Ensure overflow is hidden */
+}
+.card-header img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.card-content{
+    padding: 1rem;
+}
+
+#news-desc {
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Limits the description to 3 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis; /* Add ellipsis when text overflows */
+    max-height: 4.5em; /* Approximate height for 3 lines of text */
+    line-height: 1.5em; /* Adjust line height for consistency */
+}
+.news-source{
+    margin-block: 12px;
+}
+.site-main-wrapper {
+    position: relative;
+    padding-top: 70px;
+    z-index: 100; /* Ensure the wrapper has a higher z-index than nav */
+}
+
+.hamburger {
+    z-index: 101; /* Higher than both the nav and the wrapper */
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: none; /* Show this only on mobile */
+}
+.hamburger img{
+    position: absolute;
+    top: 2px;
+    right: 10px;
+}
+.mobile {
+    background-color: aquamarine !important;
+    position: fixed !important; /* Make the .mobile div fixed */
+    top: 0; /* Position it at the top */
+    left: 0; /* Position it at the left edge */
+    width: 100%; /* Make sure it spans the full width */
+    height:50px;
+    background-color: var(--light); /* Ensure it has a background color */
+    z-index: 100; /* Ensure it appears above other elements */
+    padding: 10px; /* Add some padding if needed */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: add shadow for better visibility */
+    display: none;
+}
+.mobile a img{
+    position: absolute;
+    top: 6px;
+    left: 8px;
+    width: 40px;
+    height: 40px;
+}
+.mobile-nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 103;
+    background: var(--light);
+    width: 100%;
+    height: 100%;
+    padding: 5rem;
+    line-height: 3rem;
+    font-size: 1.5rem;
+    transition: all .5s ease;
+    transform: translateX(-100%);
+}
+.open{
+    transform: translateX(0);
+}
+.times{
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    border: none;
+    background: none;
+    outline: none;
+    cursor: pointer;
+}
+.times img{
+    width: 30px;
+}
+/* Example media query to show the hamburger on smaller screens */
+@media (max-width: 1024px){
+    p{
+        font-size: 0.8rem ;
+    }
+    h3{
+        font-size: 1rem;
+    }
+    .hamburger{
+        display: block;
+    }
+    .mobile{
+        display: block;
+    }
+    .nav-1, .nav-2 {
+        display: none; /* Hide the nav items on smaller screens */
+    }
+    .hamburger img{
+        width: 45px;
+        height: 45px;
+    }
+    main{
+        margin-top: 1rem;
+    }
+
+}
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }    
+    .mobile{
+        display: block;
+    }
+    .container {
+        padding: 0 10px; /* Reduce the padding inside the container */
+    }
+    
+    .cards-container {
+        grid-template-columns: repeat(2, 1fr); /* Reduce to 2 columns on smaller screens */
+        gap: 1rem; /* Reduce the gap between the cards */
+    }
+
+    .card-content {
+        padding: 0.5rem; /* Reduce the padding inside the card content */
+    }
+
+    main {
+        margin-top: 1rem; /* Adjust the margin for the main content */
+    }
+    .card-content h3{
+        font-size: 1rem;
+    }
+
+}
+@media (max-width: 992px) {
+    .cards-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on medium screens */
+    }
+   
+}
+
+@media (max-width: 576px) {
+    .container {
+        padding: 0 20px;/* Further reduce the padding on very small screens */
+    }
+    .cards-container {
+        grid-template-columns: repeat(1, 1fr); /* 1 column on extra small screens */
+        gap: 3rem; /* Further reduce the gap */
+    }
+
+    .card-content {
+        padding: 1rem; /* Further reduce padding in the card */
+    }
+}
